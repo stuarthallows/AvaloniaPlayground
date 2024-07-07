@@ -2,7 +2,16 @@
 
 public class MainWindowViewModel : ViewModelBase
 {
-#pragma warning disable CA1822 // Mark members as static
-    public string Greeting => "Welcome to Avalonia!";
-#pragma warning restore CA1822 // Mark members as static
+    private string _textBlockName = "Welcome to Avalonia!";
+
+    public string TextBlockName
+    {
+        get => _textBlockName;
+        set => SetField(ref _textBlockName, value);
+    }
+
+    public void ButtonOnClick()
+    {
+        TextBlockName = "Hello, Avalonia!";
+    }
 }

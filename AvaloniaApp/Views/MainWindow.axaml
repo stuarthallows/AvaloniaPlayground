@@ -18,10 +18,9 @@
 
     <StackPanel Width="200" Margin="16" Spacing="10">
         <TextBlock 
-            Name="TextBlock1"
-            Text="This is an Avalonia application" 
+            Text="{Binding TextBlockName}" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Center"/>
-        <Button HorizontalAlignment="Center" Content="Click me" Click="Button_OnClick"/>
+        <Button HorizontalAlignment="Center" Command="{Binding ButtonOnClick}">Click me</Button>
     </StackPanel>
 </Window>
