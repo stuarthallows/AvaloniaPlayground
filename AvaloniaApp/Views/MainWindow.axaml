@@ -3,7 +3,8 @@
         xmlns:vm="using:AvaloniaApp.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
+        Width="600" Height="450"
         x:Class="AvaloniaApp.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
@@ -15,6 +16,12 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+    <StackPanel Width="200" Margin="16" Spacing="10">
+        <TextBlock 
+            Name="TextBlock1"
+            Text="This is an Avalonia application" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"/>
+        <Button HorizontalAlignment="Center" Content="Click me" Click="Button_OnClick"/>
+    </StackPanel>
 </Window>
