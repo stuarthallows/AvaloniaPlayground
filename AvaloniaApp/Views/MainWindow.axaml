@@ -21,6 +21,6 @@
             Text="{Binding TextBlockName}" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Center"/>
-        <Button HorizontalAlignment="Center" Command="{Binding ButtonOnClick}">Click me</Button>
+        <Button HorizontalAlignment="Center" Command="{Binding ButtonOnClickCommand}">Click me</Button>
     </StackPanel>
 </Window>
