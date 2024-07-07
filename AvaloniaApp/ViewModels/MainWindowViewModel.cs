@@ -36,6 +36,7 @@ public partial class MainWindowViewModel : ViewModelBase
         new ListItemTemplate(typeof(HomePageViewModel), "HomeRegular"),
         new ListItemTemplate(typeof(ButtonsPageViewModel), "CursorHoverRegular"),
         new ListItemTemplate(typeof(ImagePageViewModel), "ImageRegular"),
+        new ListItemTemplate(typeof(GridPageViewModel), "GridRegular"),
     };
     
     [RelayCommand]
