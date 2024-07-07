@@ -4,6 +4,9 @@
     <option name="projectPerEditor">
       <map>
         <entry key="AvaloniaApp/App.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Assets/Icons.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Views/ButtonsPageView.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Views/HomePageView.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
         <entry key="AvaloniaApp/Views/MainWindow.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
       </map>
     </option>
