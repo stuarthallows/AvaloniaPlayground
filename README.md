@@ -1,8 +1,13 @@
 # AvaloniaPlayground
 
 ## TODO
-- IoC
-- 
+- ~~IoC~~
+- Implement NavigationView from Fluent Avalonia
+- Community Toolkit
+- Services
+    - [Dummy Json](https://dummyjson.com/)
+    - [JSON Placeholder](https://jsonplaceholder.typicode.com/)
+- View communication
 
 ## Themes
 - Official

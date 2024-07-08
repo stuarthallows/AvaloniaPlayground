@@ -10,6 +10,17 @@ namespace AvaloniaApp.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
+    private readonly IServiceProvider? _provider;
+
+    public MainWindowViewModel()
+    {
+    }
+    
+    public MainWindowViewModel(IServiceProvider provider)
+    {
+        _provider = provider;
+    }
+    
     [ObservableProperty] private bool _isPaneOpen = true;
 
     [ObservableProperty] private ViewModelBase _currentPage = new HomePageViewModel();
@@ -21,11 +32,11 @@ public partial class MainWindowViewModel : ViewModelBase
         if (value is null)
             return;
         
-        var instance = Activator.CreateInstance(value.ModelType);
+        // Construct a view model.
+        var instance = _provider?.GetService(value.ModelType);
         if (instance is null)
         {
             return;
-            
         }
 
         CurrentPage = (ViewModelBase)instance;
