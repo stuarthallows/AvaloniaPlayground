@@ -30,7 +30,7 @@
         </ExperimentalAcrylicBorder>
         
         <Panel Margin="40">
-            <Button HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Button Command="{Binding BuyMusicCommand}" HorizontalAlignment="Right" VerticalAlignment="Top">
                 <PathIcon Data="{StaticResource StoreMicrosoftRegular}" /> 
             </Button>
         </Panel>
