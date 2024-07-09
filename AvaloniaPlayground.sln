@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaApp", "AvaloniaApp\AvaloniaApp.csproj", "{94320C43-2F95-4765-93AB-BBB167BE7AA5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.MusicStore", "Avalonia.MusicStore\Avalonia.MusicStore.csproj", "{49E95768-809C-4D96-BFA8-1000B28FBC2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{94320C43-2F95-4765-93AB-BBB167BE7AA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94320C43-2F95-4765-93AB-BBB167BE7AA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94320C43-2F95-4765-93AB-BBB167BE7AA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49E95768-809C-4D96-BFA8-1000B28FBC2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E95768-809C-4D96-BFA8-1000B28FBC2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E95768-809C-4D96-BFA8-1000B28FBC2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E95768-809C-4D96-BFA8-1000B28FBC2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
