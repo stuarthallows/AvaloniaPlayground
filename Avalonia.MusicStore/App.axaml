@@ -6,6 +6,11 @@
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
+        <!-- 
+        The view locator acts as a data template for a view model under the conditions that:
+        - the view model inherits from the ViewModelBase class,
+        - and there is a view that exists with the same base name. 
+        -->
         <local:ViewLocator/>
     </Application.DataTemplates>
   
