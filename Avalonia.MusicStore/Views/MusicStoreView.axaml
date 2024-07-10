@@ -2,6 +2,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Avalonia.MusicStore.ViewModels"
+             x:DataType="vm:MusicStoreViewModel"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Avalonia.MusicStore.Views.MusicStoreView">
     <DockPanel>
@@ -12,6 +14,8 @@
         <Button Content="Buy Album" 
                 DockPanel.Dock="Bottom" 
                 HorizontalAlignment="Center" />
-        <ListBox/>
+        <ListBox
+            ItemsSource="{Binding SearchResults}" 
+            SelectedItem="{Binding SelectedAlbum}"/>
     </DockPanel>
 </UserControl>
