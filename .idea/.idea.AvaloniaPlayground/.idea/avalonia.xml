@@ -6,6 +6,7 @@
         <entry key="Avalonia.MusicStore/App.axaml" value="Avalonia.MusicStore/Avalonia.MusicStore.csproj" />
         <entry key="Avalonia.MusicStore/Icons.axaml" value="Avalonia.MusicStore/Avalonia.MusicStore.csproj" />
         <entry key="Avalonia.MusicStore/Views/MainWindow.axaml" value="Avalonia.MusicStore/Avalonia.MusicStore.csproj" />
+        <entry key="Avalonia.MusicStore/Views/MusicStoreView.axaml" value="Avalonia.MusicStore/Avalonia.MusicStore.csproj" />
         <entry key="Avalonia.MusicStore/Views/MusicStoreWindow.axaml" value="Avalonia.MusicStore/Avalonia.MusicStore.csproj" />
         <entry key="AvaloniaApp/App.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
         <entry key="AvaloniaApp/Assets/Icons.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
