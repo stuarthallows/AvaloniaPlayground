@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Reactive.Linq;
+using System.Threading;
 using Avalonia.MusicStore.Models;
 using ReactiveUI;
 
@@ -11,7 +13,8 @@ public class MusicStoreViewModel : ViewModelBase
     private string? _searchText;
     private bool _isBusy;
     private AlbumViewModel? _selectedAlbum;
-
+    private CancellationTokenSource? _cancellationTokenSource;
+    
     public MusicStoreViewModel()
     {
         this.WhenAnyValue(x => x.SearchText)
@@ -44,6 +47,12 @@ public class MusicStoreViewModel : ViewModelBase
     {
         IsBusy = true;
         SearchResults.Clear();
+        
+        // Because _cancellationTokenSource might be replaced asynchronously by another thread, we have to work with a
+        // copy stored as a local variable.
+        _cancellationTokenSource?.Cancel();
+        _cancellationTokenSource = new CancellationTokenSource();
+        var cancellationToken = _cancellationTokenSource.Token;
 
         if (!string.IsNullOrWhiteSpace(s))
         {
@@ -54,8 +63,28 @@ public class MusicStoreViewModel : ViewModelBase
                 var vm = new AlbumViewModel(album);
                 SearchResults.Add(vm);
             }
+            
+            if (!cancellationToken.IsCancellationRequested)
+            {
+                LoadCovers(cancellationToken);
+            }
         }
 
         IsBusy = false;
+    }
+    
+    private async void LoadCovers(CancellationToken cancellationToken)
+    {
+        // Iterate through a *copy* of the search results. This is because it runs asynchronously on its own thread,
+        // and the original results collection could get changed at any time by another thread.
+        foreach (var album in SearchResults.ToList())
+        {
+            await album.LoadCover();
+
+            if (cancellationToken.IsCancellationRequested)
+            {
+                return;
+            }
+        }
     }
 }
