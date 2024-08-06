@@ -32,4 +32,20 @@ public class AlbumViewModel : ViewModelBase
     public string Artist => _album.Artist;
 
     public string Title => _album.Title;
+    
+    public async Task SaveToDiskAsync()
+    {
+        await _album.SaveAsync();
+
+        if (Cover != null)
+        {
+            var bitmap = Cover;
+
+            await Task.Run(() =>
+            {
+                using var fs = _album.SaveCoverBitmapStream();
+                bitmap.Save(fs);
+            });
+        }
+    }
 }
