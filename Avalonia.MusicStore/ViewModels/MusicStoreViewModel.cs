@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reactive;
 using System.Reactive.Linq;
 using System.Threading;
 using Avalonia.MusicStore.Models;
@@ -21,7 +22,15 @@ public class MusicStoreViewModel : ViewModelBase
             .Throttle(TimeSpan.FromMilliseconds(400))
             .ObserveOn(RxApp.MainThreadScheduler) // Ensure that the subscribed method is always called on the UI thread
             .Subscribe(DoSearch);
+        
+        BuyMusicCommand = ReactiveCommand.Create(() => SelectedAlbum);
     }
+    
+    /// <summary>
+    /// Allows us to pass an argument of class AlbumViewModel back to the main window view model, when the button is
+    /// clicked.
+    /// </summary>
+    public ReactiveCommand<Unit, AlbumViewModel?> BuyMusicCommand { get; }
     
     public string? SearchText
     {
